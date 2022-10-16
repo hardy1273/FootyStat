@@ -3,12 +3,15 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class Player {
     String name;
     int age;
     String position;
 
     List<Player> players = new ArrayList<>();
+    Player player;
 
 
 
@@ -41,13 +44,16 @@ public class Player {
         return position;
     }
 
-    public void checkDuplicate() {
-        Player player = new Player("Hardit",19,"CB");
-        if (!players.contains(player)) {
-            players.add(player);
-        } else {
-            System.out.println("Contains Duplicate");
+    public boolean checkDuplicate() {
+        for (Player p: this.players) {
+            if (!players.contains(p)) {
+                players.add(p);
+            } else {
+                System.out.println("Contains Duplicate");
+            }
         }
+        return players.contains(player);
+
     }
 
 //    public void setPosition(String playerPosition) {

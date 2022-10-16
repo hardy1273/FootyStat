@@ -77,6 +77,7 @@ public class StatApp {
 //                players.add(Player);
 //            }
 //        }
+
         addPlayerStats();
 
 
@@ -96,8 +97,6 @@ public class StatApp {
         System.out.println("Added Team!");
 
         addTeamStats();
-
-
     }
 
     //EFFECTS: quits the application and prints out an exit statement ("Bye!")
@@ -127,6 +126,9 @@ public class StatApp {
         int minutesPlayed = sc.nextInt();
 
         System.out.println("Stats recorded!");
+        System.out.println("Goals: " + goals);
+        System.out.println("Assists: " + assists);
+        System.out.println("Minutes Played: " + minutesPlayed);
 
 
     }
@@ -139,7 +141,7 @@ public class StatApp {
 
 
         System.out.println("Team name:");
-        String tname = sc.next();
+        String tmName = sc.next();
 
         System.out.println("Points");
         int points = sc.nextInt();
@@ -164,5 +166,4 @@ public class StatApp {
         }
 
     }
-
 }
