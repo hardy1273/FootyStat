@@ -41,6 +41,15 @@ public class Player {
         return position;
     }
 
+    public void checkDuplicate() {
+        Player player = new Player("Hardit",19,"CB");
+        if (!players.contains(player)) {
+            players.add(player);
+        } else {
+            System.out.println("Contains Duplicate");
+        }
+    }
+
 //    public void setPosition(String playerPosition) {
 //        this.position = playerPosition;
 //    }
