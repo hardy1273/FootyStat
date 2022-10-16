@@ -47,6 +47,8 @@ public class TeamTest {
         Team teamTest2 = new Team("Madrid",17,2);
 
         teamsTest.add(teamTest);
+        assertEquals(1,teamsTest.size());
+
         teamsTest.add(teamTest2);
         assertEquals(2,teamsTest.size());
 

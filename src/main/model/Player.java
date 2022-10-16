@@ -24,26 +24,26 @@ public class Player {
         return name;
     }
 
-    public void setName(String playerName) {
-        this.name = playerName;
-    }
+//    public void setName(String playerName) {
+//        this.name = playerName;
+//    }
 
     public int getAge() {
         return age;
     }
 
-    public void setAge(int playerAge) {
-
-        this.age = playerAge;
-    }
+//    public void setAge(int playerAge) {
+//
+//        this.age = playerAge;
+//    }
 
     public String getPosition() {
         return position;
     }
 
-    public void setPosition(String playerPosition) {
-        this.position = playerPosition;
-    }
+//    public void setPosition(String playerPosition) {
+//        this.position = playerPosition;
+//    }
 
 }
 

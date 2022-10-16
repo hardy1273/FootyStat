@@ -17,26 +17,26 @@ public class Team {
         return tname;
     }
 
-    public void setName(String teamName) {
-        this.tname = teamName;
-    }
+//    public void setName(String teamName) {
+//        this.tname = teamName;
+//    }
 
     public int getPoints() {
         return points;
     }
 
-    public void setPoints(int teamPoints) {
-
-        this.points = teamPoints;
-    }
+//    public void setPoints(int teamPoints) {
+//
+//        this.points = teamPoints;
+//    }
 
     public int getStanding() {
         return standing;
     }
 
-    public void setStanding(int teamStanding) {
-        this.standing = teamStanding;
-    }
+//    public void setStanding(int teamStanding) {
+//        this.standing = teamStanding;
+//    }
 }
 
 

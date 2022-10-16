@@ -1,33 +1,30 @@
 package model;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
 public class League {
     String lname;
-    ArrayList<Team> teams;
+    int teams;
 
-    public League(String lname, ArrayList teams) {
+    public League(String lname, int teams) {
         this.lname = lname;
-        this.teams = new ArrayList<Team>();
+        this.teams = teams;
 
     }
 
-    public ArrayList<Team> getTeams() {
+    public int getTeams() {
         return teams;
     }
 
-    public void setTeams(ArrayList<Team> teams) {
-        this.teams = teams;
-    }
+//    public void setTeams(ArrayList<Team> teams) {
+//        this.teams = teams;
+//    }
 
     public String getLname() {
         return lname;
     }
 
-    public void setLname(String lname) {
-        this.lname = lname;
-    }
+//    public void setLname(String lname) {
+//        this.lname = lname;
+
 }
 
 
