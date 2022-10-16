@@ -53,7 +53,6 @@ public class Player {
             }
         }
         return players.contains(player);
-
     }
 
 //    public void setPosition(String playerPosition) {

@@ -68,7 +68,7 @@ class PlayerTest {
         assertEquals(1, playersTest.size());
 
         playersTest.add(playerTest);
-        playersTest.checkDuplicate();
+
         assertEquals(1, playersTest.size());
 
     }
