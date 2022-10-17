@@ -3,11 +3,9 @@ package ui;
 
 import model.Player;
 import model.Team;
-import model.League;
 
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class StatApp {
@@ -140,6 +138,7 @@ public class StatApp {
     //EFFECTS: Starts taking input for league format, runs a loop with the given number of teams
     // to keep adding
     public void addLeague() {
+        ArrayList<String> teams = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter league details now!");
 
@@ -150,9 +149,11 @@ public class StatApp {
 
             System.out.println("Enter team " + i);
             String tmNames = sc.next();
+            teams.add(tmNames);
 
 
         }
+        System.out.println(teams);
 
     }
 }

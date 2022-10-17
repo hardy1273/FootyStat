@@ -1,9 +1,14 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Team {
     String tname;
     int points;
     int standing;
+
+    ArrayList<Team> teams = new ArrayList<>();
+    Team team;
 
     public Team(String tname, int points, int standing) {
         this.tname = tname;
@@ -37,7 +42,19 @@ public class Team {
 //    public void setStanding(int teamStanding) {
 //        this.standing = teamStanding;
 //    }
+
+    public void addTeam(Team team) {
+        if (!teams.contains(team)) {
+            teams.add(team);
+        }
+    }
+
+    public int getSize() {
+        return teams.size();
+    }
+
 }
+
 
 
 

@@ -32,9 +32,7 @@ class PlayerTest {
     @Test
     public void testAddPlayerEmpty() {
         ArrayList<Player> playersTest = new ArrayList<>();
-
         assertEquals(0, playersTest.size());
-
 
     }
 
@@ -42,10 +40,7 @@ class PlayerTest {
     public void testAddPlayerOnce() {
         ArrayList<Player> playersTest = new ArrayList<>();
         playersTest.add(playerTest);
-
         assertEquals(1, playersTest.size());
-
-
     }
 
     @Test

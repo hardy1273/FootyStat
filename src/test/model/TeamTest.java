@@ -8,11 +8,14 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TeamTest {
-    private Team teamTest;
+    Team teamTest;
+
+
 
     @BeforeEach
     public void runBefore() {
         Team teamTest = new Team("Barca",20,1);
+        ArrayList<Team> teams = new ArrayList<>();
 
     }
     @Test
@@ -27,17 +30,17 @@ public class TeamTest {
     @Test
     public void testAddTeamEmpty() {
         ArrayList<Team> teamsTest = new ArrayList<>();
-
         assertEquals(0,teamsTest.size());
 
     }
 
     @Test
     public void testAddTeamOnce() {
+        Team teamTest = new Team("Barca",20,1);
         ArrayList<Team> teamsTest = new ArrayList<>();
-        teamsTest.add(teamTest);
+        teamTest.addTeam(teamTest);
+        assertEquals(1,teamTest.getSize());
 
-        assertEquals(1,teamsTest.size());
 
     }
 
@@ -45,10 +48,8 @@ public class TeamTest {
     public void testAddTeamMultiple() {
         ArrayList<Team> teamsTest = new ArrayList<>();
         Team teamTest2 = new Team("Madrid",17,2);
-
         teamsTest.add(teamTest);
         assertEquals(1,teamsTest.size());
-
         teamsTest.add(teamTest2);
         assertEquals(2,teamsTest.size());
 
