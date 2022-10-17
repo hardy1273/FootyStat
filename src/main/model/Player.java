@@ -43,17 +43,27 @@ public class Player {
         return position;
     }
 
-    public ArrayList addPlayerAndDisplay() {
-        for (Player p: this.players) {
-            if (!players.contains(p)) {
-                players.add(p);
-            } else {
-                System.out.println("Contains Duplicate");
-            }
-        }
-        return (ArrayList) players;
-    }
+//    public ArrayList addPlayerAndDisplay() {
+//        for (Player p: this.players) {
+//            if (!players.contains(p)) {
+//                players.add(p);
+//            } else {
+//                System.out.println("Contains Duplicate");
+//            }
+//        }
+//        return (ArrayList) players;
+//    }
 
+    public boolean checkEligibility() {
+
+        if (age > 18) {
+            System.out.println("Eligible");;
+            return true;
+        } else {
+            return false;
+        }
+
+    }
 
 }
 

@@ -62,14 +62,22 @@ class PlayerTest {
 
     }
 
+//    @Test
+//    public void addPlayerAndDisplayTest() {
+//        Player playerTest = new Player("Hardit", 19, "Centre Back");
+//        ArrayList<Player> playersTest = new ArrayList<>();
+//        playersTest.add(playerTest);
+//        playerTest.addPlayerAndDisplay();
+//        assertEquals(1, playersTest.size());
+//
+//
+//    }
     @Test
-    public void addPlayerAndDisplayTest() {
-        Player playerTest = new Player("Hardit", 19, "Centre Back");
+    public void checkEligibilityTest() {
         ArrayList<Player> playersTest = new ArrayList<>();
-        playersTest.add(playerTest);
-        playerTest.addPlayerAndDisplay();
-        assertEquals(1, playersTest.size());
-
+        Player playertest2 = new Player("Sample",17,"Centre back");
+        boolean successA = playertest2.checkEligibility();
+        assertFalse(successA);
 
     }
 
