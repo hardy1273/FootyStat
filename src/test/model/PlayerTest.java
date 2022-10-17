@@ -16,6 +16,7 @@ class PlayerTest {
     @BeforeEach
     public void runBefore() {
         Player playerTest = new Player("Hardit", 19, "Centre Back");
+        ArrayList<Player> playersTest = new ArrayList<>();
 
 
     }
@@ -62,14 +63,14 @@ class PlayerTest {
     }
 
     @Test
-    public void checkDuplicateTest() {
+    public void addPlayerAndDisplayTest() {
+        Player playerTest = new Player("Hardit", 19, "Centre Back");
         ArrayList<Player> playersTest = new ArrayList<>();
         playersTest.add(playerTest);
+        playerTest.addPlayerAndDisplay();
         assertEquals(1, playersTest.size());
 
-        playersTest.add(playerTest);
-
-        assertEquals(1, playersTest.size());
 
     }
+
 }

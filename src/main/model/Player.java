@@ -9,7 +9,6 @@ public class Player {
     String name;
     int age;
     String position;
-
     List<Player> players = new ArrayList<>();
     Player player;
 
@@ -44,7 +43,7 @@ public class Player {
         return position;
     }
 
-    public boolean checkDuplicate() {
+    public ArrayList addPlayerAndDisplay() {
         for (Player p: this.players) {
             if (!players.contains(p)) {
                 players.add(p);
@@ -52,12 +51,9 @@ public class Player {
                 System.out.println("Contains Duplicate");
             }
         }
-        return players.contains(player);
+        return (ArrayList) players;
     }
 
-//    public void setPosition(String playerPosition) {
-//        this.position = playerPosition;
-//    }
 
 }
 
