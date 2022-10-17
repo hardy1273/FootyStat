@@ -7,7 +7,7 @@ The Application will act as a tracker to record your individual football stats a
 
 
 User Stories:
-- As a User, I want to be able to add my statistics in a class (goals, assists, passes) to my player object.
-- As a User, I want to be able to view my teams and my individual statistics.
-- As a User, I want to be able to create my league object and add a list of teams to it.
-- As a User, I want to be able to register myself in a team.
+- As a User, I want to be able to record my statistics (goals, assists, passes) as a player.
+- As a User, I want to be able to add teams.
+- As a User, I want to be able to create my league and add a list of teams to it.
+- As a User, I want to be able to view team, player and league details.

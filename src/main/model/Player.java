@@ -47,7 +47,6 @@ public class Player {
     public boolean checkEligibility() {
 
         if (age > 18) {
-            System.out.println("Eligible");
             return true;
         } else {
             return false;

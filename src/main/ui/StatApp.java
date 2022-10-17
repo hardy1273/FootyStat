@@ -13,6 +13,7 @@ public class StatApp {
     private Team team;
     private Scanner sc;
 
+    //EFFECTS: constructs new scanner ,player and team to be used later in program
     public StatApp() {
         startAndDisplay();
         Scanner sc = new Scanner(System.in);
@@ -22,9 +23,7 @@ public class StatApp {
 
 
 
-
-
-
+    //EFFECTS: initializes menu of the app and print a welcome message.
     public void startAndDisplay() {
         System.out.println("Welcome to FootyStat!");
         System.out.println("What would you like to do today?");
@@ -39,8 +38,7 @@ public class StatApp {
 
 
 
-
-
+    //EFFECTS: displays menu of the app and can be operated on
     public void displayMenu() {
 
         System.out.println("To add player Press P/p");
@@ -50,7 +48,7 @@ public class StatApp {
 
         Scanner sc = new Scanner(System.in);
 
-        String input = sc.next();
+        String input = sc.next().toLowerCase();
 
         if (input.equals("p")) {
             addPlayerStats();
@@ -97,6 +95,15 @@ public class StatApp {
     public void addPlayerStats() {
 
         Scanner sc = new Scanner(System.in);
+        System.out.println("Enter name");
+        String playerName = sc.next();
+
+        System.out.println("Enter age");
+        int playerAge = sc.nextInt();
+
+        System.out.println("Enter position");
+        String playerPosition = sc.next();
+
         System.out.println("Please enter Stats now");
 
 
@@ -111,6 +118,9 @@ public class StatApp {
         int minutesPlayed = sc.nextInt();
 
         System.out.println("Stats recorded!");
+
+        System.out.println("Your Stats recorded as of now are the following:");
+        System.out.println(playerName + " " + "Age: " + playerAge + " " + "Position: " + playerPosition);
         System.out.println("Goals: " + goals);
         System.out.println("Assists: " + assists);
         System.out.println("Minutes Played: " + minutesPlayed);
@@ -131,6 +141,9 @@ public class StatApp {
         int points = sc.nextInt();
 
         System.out.println("Details recorded!");
+
+        System.out.println("Team name: " + tmName);
+        System.out.println("points: " + points);
 
     }
 
