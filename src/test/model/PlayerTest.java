@@ -6,8 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 class PlayerTest {
@@ -76,9 +75,11 @@ class PlayerTest {
     public void checkEligibilityTest() {
         ArrayList<Player> playersTest = new ArrayList<>();
         Player playertest2 = new Player("Sample",17,"Centre back");
+        Player playerTest = new Player("Hardit",19,"Centre back");
         boolean successA = playertest2.checkEligibility();
+        boolean successB = playerTest.checkEligibility();
         assertFalse(successA);
-
+        assertTrue(successB);
     }
 
 }

@@ -126,8 +126,6 @@ public class StatApp {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter team details now!");
 
-
-
         System.out.println("Team name:");
         String tmName = sc.next();
 
