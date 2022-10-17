@@ -55,7 +55,7 @@ public class StatApp {
         String input = sc.next();
 
         if (input.equals("p")) {
-            addPlayer();
+            addPlayerStats();
         } else if (input.equals("l")) {
             createLeague();
         } else if (input.equals("t")) {
@@ -70,19 +70,8 @@ public class StatApp {
 
     }
 
-    //EFFECTS: adds player to arraylist if not already present
-    public void addPlayer() {
-//        for (Player allPlayers : this.players) {
-//            if (!players.contains(Player)) {
-//                players.add(Player);
-//            }
-//        }
-
-        addPlayerStats();
 
 
-
-    }
 
     //EFFECTS : creates a new league
     public void createLeague() {
@@ -109,6 +98,7 @@ public class StatApp {
 
     }
 
+    //EFFECTS: adds player stats and displays them
     public void addPlayerStats() {
 
         Scanner sc = new Scanner(System.in);
@@ -133,6 +123,7 @@ public class StatApp {
 
     }
 
+    //EFFECTS: adds team name, points and displays them
     public void addTeamStats() {
 
         Scanner sc = new Scanner(System.in);
@@ -150,6 +141,9 @@ public class StatApp {
 
     }
 
+    //MODIFIES: this
+    //EFFECTS: Starts taking input for league format, runs a loop with the given number of teams
+    // to keep adding
     public void addLeague() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter league details now!");
