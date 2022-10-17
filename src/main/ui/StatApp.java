@@ -70,9 +70,6 @@ public class StatApp {
 
     }
 
-
-
-
     //EFFECTS : creates a new league
     public void createLeague() {
         System.out.println("Created League");
