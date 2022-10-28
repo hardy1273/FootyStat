@@ -1,0 +1,14 @@
+{
+  "teams": [
+    {
+      "teams": [],
+      "name": "Barca"
+    },
+    {
+      "teams": [],
+      "name": "Madrid"
+    }
+  ],
+  "name": "La Liga",
+  "numTeams": 0
+}

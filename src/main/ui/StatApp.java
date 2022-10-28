@@ -3,24 +3,46 @@ package ui;
 
 import model.Player;
 import model.Team;
+import model.League;
 
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import persistence.JsonReader;
+import persistence.JsonWriter;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.stream.Stream;
+import persistence.JsonReader;
+import persistence.JsonWriter;
+
+import java.io.FileNotFoundException;
+import org.json.*;
+
 
 public class StatApp {
     private Player player;
     private Team team;
+    private League league;
     private Scanner sc;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
+    private static final String JSON_STORE = "./data/statapp.json";
 
     //EFFECTS: constructs new scanner ,player and team to be used later in program
-    public StatApp() {
-        startAndDisplay();
-        Scanner sc = new Scanner(System.in);
-        Player player1 = new Player("Hardit",19,"CB");
-        Team  team1 = new Team("Barca",20,1);
-    }
+    public StatApp()  {
 
+        Scanner sc = new Scanner(System.in);
+//        Player player1 = new Player("Hardit", 19, "CB");
+//        Team team1 = new Team("Barca", 20, 1);
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
+        startAndDisplay();
+    }
 
 
     //EFFECTS: initializes menu of the app and print a welcome message.
@@ -37,13 +59,14 @@ public class StatApp {
     }
 
 
-
     //EFFECTS: displays menu of the app and can be operated on
     public void displayMenu() {
 
         System.out.println("To add player Press P/p");
         System.out.println("To create league press L/l");
         System.out.println("To add team press T/t");
+        System.out.println("To Load stats press ls/LS");
+        System.out.println("To Save stats press s/S");
         System.out.println("To quit press q");
 
         Scanner sc = new Scanner(System.in);
@@ -58,6 +81,11 @@ public class StatApp {
             addTeam();
         } else if (input.equals("q")) {
             quit();
+        } else if (input.equals("s")) {
+            saveLeague();
+        } else if (input.equals("ls")) {
+            loadLeague();
+
 
         } else {
             System.out.println("Please Enter a Valid input");
@@ -76,7 +104,6 @@ public class StatApp {
 
     //EFFECTS: adds team to arraylist if not already present
     public void addTeam() {
-        System.out.println("Added Team!");
 
         addTeamStats();
     }
@@ -87,7 +114,6 @@ public class StatApp {
         System.out.println("Bye!");
 
         System.exit(0);
-
 
     }
 
@@ -107,7 +133,6 @@ public class StatApp {
         System.out.println("Please enter Stats now");
 
 
-
         System.out.println("Goals scored:");
         int goals = sc.nextInt();
 
@@ -125,6 +150,8 @@ public class StatApp {
         System.out.println("Assists: " + assists);
         System.out.println("Minutes Played: " + minutesPlayed);
 
+        player = new Player(playerName, playerAge, playerPosition, goals, assists, minutesPlayed);
+
 
     }
 
@@ -140,33 +167,58 @@ public class StatApp {
         System.out.println("Points");
         int points = sc.nextInt();
 
+        System.out.println("Standing");
+        int standing = sc.nextInt();
+
         System.out.println("Details recorded!");
 
         System.out.println("Team name: " + tmName);
         System.out.println("points: " + points);
 
+        league.addTeamToLeague(new Team(tmName, points, standing));
+
+        System.out.println(league.getTeamsInLeague());
     }
 
     //MODIFIES: this
     //EFFECTS: Starts taking input for league format, runs a loop with the given number of teams
     // to keep adding
     public void addLeague() {
-        ArrayList<String> teams = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter league details now!");
 
         System.out.println("Enter number of teams:");
         int numTeams = sc.nextInt();
+        System.out.println("Enter League Name ");
+        String lname = sc.next();
+        league = new League(lname);
 
-        for (int i = 0; i < numTeams; i++) {
+        System.out.println(league.getLname());
 
-            System.out.println("Enter team " + i);
-            String tmNames = sc.next();
-            teams.add(tmNames);
+    }
 
 
+    // EFFECTS: saves the workroom to file
+    private void saveLeague() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(league);
+            jsonWriter.close();
+            System.out.println("Saved " + league.getLname() + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
         }
-        System.out.println(teams);
+    }
+//
+//    // MODIFIES: this
+//    // EFFECTS: loads workroom from file
 
+    private void loadLeague() {
+        try {
+            league = jsonReader.read();
+            System.out.println("Loaded " + league.getLname() + " from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
     }
 }

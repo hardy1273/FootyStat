@@ -1,24 +1,34 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
 
-public class Player {
+public class Player implements Writable {
     String name;
     int age;
     String position;
+    int goals;
+    int assists;
+    int minutes;
+
     List<Player> players = new ArrayList<>();
     Player player;
 
 
 
 
-    public Player(String name, int age, String position) {
+    public Player(String name, int age, String position, int goals, int assists, int minutes) {
         this.name = name;
         this.age = age;
         this.position = position;
+        this.goals = goals;
+        this.assists = assists;
+        this.minutes = minutes;
     }
 
 
@@ -54,6 +64,10 @@ public class Player {
 
     }
 
+    @Override
+    public JSONObject toJson() {
+        return null;
+    }
 }
 
 

@@ -11,3 +11,6 @@ User Stories:
 - As a User, I want to be able to add teams.
 - As a User, I want to be able to create my league and add a list of teams to it.
 - As a User, I want to be able to view team, player and league details.
+- As a User, I want to be able to load my player statistics.
+- As a User, I want to be able to save my player statistics.
+

@@ -14,7 +14,7 @@ class PlayerTest {
 
     @BeforeEach
     public void runBefore() {
-        Player playerTest = new Player("Hardit", 19, "Centre Back");
+        Player playerTest = new Player("Hardit", 19, "Centre Back",2,7,700);
         ArrayList<Player> playersTest = new ArrayList<>();
 
 
@@ -22,7 +22,7 @@ class PlayerTest {
 
     @Test
     public void testConstructor() {
-        Player playerTest = new Player("Hardit", 19, "Centre Back");
+        Player playerTest = new Player("Hardit", 19, "Centre Back",2,2,20);
         assertEquals("Hardit", playerTest.getName());
         assertEquals(19, playerTest.getAge());
         assertEquals("Centre Back", playerTest.getPosition());
@@ -49,7 +49,7 @@ class PlayerTest {
         playersTest.add(playerTest);
         assertEquals(1, playersTest.size());
 
-        Player playerTest2 = new Player("Leo Messi", 35, "RW");
+        Player playerTest2 = new Player("Leo Messi", 35, "RW",45,20,1900);
         playersTest.add(playerTest2);
         assertEquals(2, playersTest.size());
 
@@ -70,8 +70,8 @@ class PlayerTest {
     @Test
     public void checkEligibilityTest() {
         ArrayList<Player> playersTest = new ArrayList<>();
-        Player playertest2 = new Player("Sample",17,"Centre back");
-        Player playerTest = new Player("Hardit",19,"Centre back");
+        Player playertest2 = new Player("Sample",17,"Centre back",2,4,60);
+        Player playerTest = new Player("Hardit",19,"Centre back",2,3,90);
         boolean successA = playertest2.checkEligibility();
         boolean successB = playerTest.checkEligibility();
         assertFalse(successA);

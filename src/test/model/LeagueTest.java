@@ -3,20 +3,27 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import model.Team;
+import model.League;
 
 public class LeagueTest {
     private League leagueTest;
+    private Team team;
+
+
+
 
     @BeforeEach
     public void runBefore() {
-        League leagueTest = new League("La liga",20);
+        League leagueTest = new League("La liga");
+        ArrayList<Team> TeamsInleagueTestList = new ArrayList<>();
 
     }
     @Test
     public void testConstructor() {
-        League leagueTest = new League("La liga",20);
+        League leagueTest = new League("La liga");
         assertEquals("La liga",leagueTest.getLname());
-        assertEquals(20,leagueTest.getTeams());
+//        assertEquals(20,leagueTest.getTeams());
 
     }
 
@@ -37,15 +44,24 @@ public class LeagueTest {
     }
 
     @Test
-    public void testAddTeamMultiple() {
+    public void testAddLeagueMultiple() {
         ArrayList<League> leagueTestList = new ArrayList<>();
-        League leagueTest2 = new League("PL",20);
+        League leagueTest2 = new League("PL");
 
         leagueTestList.add(leagueTest);
         leagueTestList.add(leagueTest2);
         assertEquals(2,leagueTestList.size());
 
     }
+    @Test
+    public void testAddTeamToLeague() {
+        League leagueTest = new League("La liga");
+        Team t = new Team("Barca",20,1);
+        leagueTest.addTeamToLeague(t);
+        assertEquals(1,leagueTest.getSize());
+
+    }
+
 }
 
 
