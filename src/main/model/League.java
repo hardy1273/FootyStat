@@ -57,7 +57,7 @@ public class League implements Writable {
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("name", lname);
-        json.put("numTeams", teams);
+        //json.put("numTeams", teams);
         json.put("teams", teamsToJson());
         return json;
     }

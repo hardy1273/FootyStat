@@ -61,12 +61,12 @@ public class JsonReader {
 
 //    // MODIFIES: league
 //    // EFFECTS: parses team from JSON object and adds it to league
-    private void addTeam(League league, JSONObject jsonObject) {
-        String name = jsonObject.getString("name");
-        int points = jsonObject.getInt("points");
-        int standing = jsonObject.getInt("standings");
-        Team team = new Team(name, points, standing);
-        league.addTeamToLeague(team);
-    }
+//    private void addTeam(League league, JSONObject jsonObject) {
+//        String name = jsonObject.getString("name");
+//        int points = jsonObject.getInt("points");
+//        int standing = jsonObject.getInt("standings");
+//        Team team = new Team(name, points, standing);
+//        league.addTeamToLeague(team);
+//    }
 
 }

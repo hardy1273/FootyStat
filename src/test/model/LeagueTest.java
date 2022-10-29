@@ -1,4 +1,5 @@
 package model;
+import org.json.JSONArray;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
@@ -74,6 +75,25 @@ public class LeagueTest {
 //
 //
 //    }
+
+    @Test
+    public void teamsToJsonTest() {
+        League leagueTest = new League("La liga");
+        Team t = new Team("Barca",20,1);
+        leagueTest.addTeamToLeague(t);
+        JSONArray jsonArray = new JSONArray();
+        jsonArray.put(t.toJson());
+
+//       assertEquals("[{\"teams\":[],\"name\":\"Barca\"},{\"teams\":[],\"name\":\"Barca\"}]",
+//               jsonArray.put(t.toJson()));
+
+
+
+
+
+
+
+    }
 
 }
 
