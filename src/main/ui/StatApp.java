@@ -9,6 +9,7 @@ import model.League;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import persistence.JsonReader;
 import persistence.JsonWriter;
@@ -61,16 +62,13 @@ public class StatApp {
 
     //EFFECTS: displays menu of the app and can be operated on
     public void displayMenu() {
-
         System.out.println("To add player Press P/p");
         System.out.println("To create league press L/l");
         System.out.println("To add team press T/t");
         System.out.println("To Load stats press ls/LS");
         System.out.println("To Save stats press s/S");
         System.out.println("To quit press q");
-
         Scanner sc = new Scanner(System.in);
-
         String input = sc.next().toLowerCase();
 
         if (input.equals("p")) {
@@ -85,12 +83,9 @@ public class StatApp {
             saveLeague();
         } else if (input.equals("ls")) {
             loadLeague();
-
-
         } else {
             System.out.println("Please Enter a Valid input");
         }
-
 
     }
 
@@ -198,7 +193,9 @@ public class StatApp {
     }
 
 
-    // EFFECTS: saves the workroom to file
+
+
+    // EFFECTS: saves the league to file
     private void saveLeague() {
         try {
             jsonWriter.open();
@@ -211,7 +208,7 @@ public class StatApp {
     }
 //
 //    // MODIFIES: this
-//    // EFFECTS: loads workroom from file
+//    // EFFECTS: loads league from file
 
     private void loadLeague() {
         try {

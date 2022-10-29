@@ -65,11 +65,9 @@ public class League implements Writable {
     // EFFECTS: returns teams in this league as a JSON array
     private JSONArray teamsToJson() {
         JSONArray jsonArray = new JSONArray();
-
         for (Team t : teamsInLeague) {
             jsonArray.put(t.toJson());
         }
-
         return jsonArray;
     }
 }

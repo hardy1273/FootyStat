@@ -1,5 +1,7 @@
 {
-    "teams": [],
-    "name": "LaLiga",
-    "numTeams": 0
+    "teams": [{
+        "teams": [],
+        "name": "BARCA"
+    }],
+    "name": "PL"
 }

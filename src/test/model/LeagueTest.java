@@ -83,18 +83,8 @@ public class LeagueTest {
         Team t = new Team("Barca",20,1);
         leagueTest.addTeamToLeague(t);
         JSONArray jsonArray = new JSONArray();
-        jsonArray.put(t.toJson());
         JSONObject teamJson = t.toJson();
-
         assertEquals(teamJson.get("name"), t.tname);
-
-
-
-//        "[{\"teams\":[],\"name\":\"Barca\"},{\"teams\":[],\"name\":\"Barca\"}]"
-
-
-
-
     }
 
 }

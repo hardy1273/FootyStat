@@ -40,6 +40,7 @@ public class JsonReader {
     }
 
     // EFFECTS: parses league from JSON object and returns it
+    // EFFECTS: parses league from JSON object and returns it
     private League parseLeague(JSONObject jsonObject) {
         String name = jsonObject.getString("name");
 //        int numTeams = jsonObject.getInt("numTeams");
