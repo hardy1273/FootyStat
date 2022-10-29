@@ -25,9 +25,7 @@ public class League implements Writable {
     }
 
 
-    public int getTeams() {
-        return teams;
-    }
+
 //
 ////    public void setTeams(ArrayList<Team> teams) {
 ////        this.teams = teams;

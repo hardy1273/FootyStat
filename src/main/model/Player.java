@@ -8,7 +8,7 @@ import java.util.List;
 
 
 
-public class Player implements Writable {
+public class Player {
     String name;
     int age;
     String position;
@@ -18,8 +18,6 @@ public class Player implements Writable {
 
     List<Player> players = new ArrayList<>();
     Player player;
-
-
 
 
     public Player(String name, int age, String position, int goals, int assists, int minutes) {
@@ -64,11 +62,4 @@ public class Player implements Writable {
 
     }
 
-    @Override
-    public JSONObject toJson() {
-        return null;
-    }
 }
-
-
-

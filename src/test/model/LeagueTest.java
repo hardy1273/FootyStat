@@ -62,6 +62,19 @@ public class LeagueTest {
 
     }
 
+//    @Test
+//    public void getTeamsTest() {
+//        League leagueTest = new League("La liga");
+//        Team t = new Team("Barca",20,1);
+//        Team team2= new Team("Madrid",20,1);
+//        leagueTest.addTeamToLeague(t);
+//        leagueTest.addTeamToLeague(team2);
+//
+//        assertEquals(2,leagueTest.getTeams());
+//
+//
+//    }
+
 }
 
 
