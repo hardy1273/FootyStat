@@ -17,7 +17,7 @@ User Stories:
 # Instructions for Grader
 
 - You can generate the first required event related to adding Xs to a Y by selecting the Create League option on the startup page.
-- You can generate the second required event related to adding Xs to a Y by clearing the fields where you first added the details and then pressing save each time a new event is added.
+- You can generate the second required event related to adding Xs to a Y by clearing the fields where you first added the details and then pressing save each time a new event is added, or by using the create league option in the Create league page.
 - You can locate my visual component on the welcome page.
 - You can save the state of my application by pressing add and save team in the create league page.
 - You can reload the state of my application by pressing load league on the create league page.
