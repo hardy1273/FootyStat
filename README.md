@@ -14,3 +14,10 @@ User Stories:
 - As a User, I want to be able to load teams in a league.
 - As a User, I want to be able to save teams in a league.
 
+# Instructions for Grader
+
+- You can generate the first required event related to adding Xs to a Y by selecting the Create League option on the startup page.
+- You can generate the second required event related to adding Xs to a Y by clearing the fields where you first added the details and then pressing save each time a new event is added.
+- You can locate my visual component on the welcome page.
+- You can save the state of my application by pressing add and save team in the create league page.
+- You can reload the state of my application by pressing load league on the create league page.

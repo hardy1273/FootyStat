@@ -1,11 +1,14 @@
 package ui;
 
 
+import javafx.scene.layout.Pane;
 import model.Player;
 import model.Team;
 import model.League;
 
 
+import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,6 +27,8 @@ import persistence.JsonWriter;
 import java.io.FileNotFoundException;
 import org.json.*;
 
+import javax.swing.*;
+
 
 public class StatApp {
     private Player player;
@@ -32,19 +37,20 @@ public class StatApp {
     private Scanner sc;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
-    private static final String JSON_STORE = "./data/statapp.json";
+    static final String JSON_STORE = "./data/statapp.json";
 
     //EFFECTS: constructs new scanner ,player and team to be used later in program
-    public StatApp()  {
+    public StatApp() throws IOException {
 
         Scanner sc = new Scanner(System.in);
 //        Player player1 = new Player("Hardit", 19, "CB");
 //        Team team1 = new Team("Barca", 20, 1);
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
+
+        new Gui();
         startAndDisplay();
     }
-
 
     //EFFECTS: initializes menu of the app and print a welcome message.
     public void startAndDisplay() {
@@ -218,4 +224,5 @@ public class StatApp {
             System.out.println("Unable to read from file: " + JSON_STORE);
         }
     }
+
 }

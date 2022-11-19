@@ -62,6 +62,8 @@ public class Team implements Writable {
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("name", tname);
+        json.put("points", points);
+        json.put("standing", standing);
         json.put("teams", teamsToJson());
         return json;
     }
@@ -77,7 +79,5 @@ public class Team implements Writable {
         return jsonArray;
     }
 }
-
-
 
 

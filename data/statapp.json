@@ -1,7 +1,9 @@
 {
     "teams": [{
+        "standing": 1,
         "teams": [],
-        "name": "BARCA"
+        "name": "Barca",
+        "points": 21
     }],
-    "name": "PL"
+    "name": "Premier League"
 }
