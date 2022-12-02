@@ -1,11 +1,15 @@
 package ui;
 
+import model.Event;
+import model.EventLog;
 import model.League;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -33,6 +37,9 @@ public class Gui extends JFrame {
     JPanel newTeamPanel = new JPanel();
     JsonWriter jsonWriter = new JsonWriter(JSON_STORE);
     JsonReader jsonReader = new JsonReader(JSON_STORE);
+    EventLog el;
+
+
 
 
     BufferedImage previewImage = ImageIO.read(new File("./data/images/homePage.png"));
@@ -72,6 +79,8 @@ public class Gui extends JFrame {
         loadLeague.setActionCommand("loadLeague");
         loadLeague.addActionListener(this::actionPerformed);
 
+
+
         //sizing
         //addLeague.setPreferredSize(new Dimension(100, 100));
         frame.setPreferredSize(new Dimension(800, 500));
@@ -110,6 +119,8 @@ public class Gui extends JFrame {
             System.out.println("Unable to read from file: " + JSON_STORE);
         }
     }
+
+
 
 
 

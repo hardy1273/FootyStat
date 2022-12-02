@@ -1,5 +1,7 @@
 package ui;
 
+import model.Event;
+import model.EventLog;
 import model.League;
 import model.Team;
 import org.json.JSONArray;
@@ -12,6 +14,8 @@ import persistence.JsonWriter;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import static ui.StatApp.JSON_STORE;
@@ -23,22 +27,26 @@ public class LeaguePage {
     JPanel panel = new JPanel();
     JLabel label = new JLabel("Create a league", SwingConstants.CENTER);
     JLabel label3 = new JLabel("Enter League name:");
+    JLabel label4 = new JLabel("Please load before proceeding!");
     JTextField f2 = new JTextField(10);
     JSONObject json;
     JsonWriter jsonWriter = new JsonWriter(JSON_STORE);
-    JsonReader jsonReader = new JsonReader(JSON_STORE);
     League league;
-    int teams;
-    Team team;
     ArrayList<Team> teamsInLeague = new ArrayList<>();
 
 
     public LeaguePage() {
         panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 10, 20));
         panel.setLayout(new GridLayout(0, 1));
-        frame.add(panel, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setTitle("FootyStat");
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                for (Event next : EventLog.getInstance()) {
+                    System.out.println(next);
+                }
+            }
+        });
+
 
         JButton addLeague = new JButton("Save this league! (After saving , add teams)");
         JButton addTeam = new JButton("Add Teams to this league");
@@ -52,10 +60,18 @@ public class LeaguePage {
         panel.add(f2);
         panel.add(addLeague);
         panel.add(addTeam);
+
+        panelOps();
+
+    }
+
+    public void panelOps() {
+        frame.setTitle("FootyStat");
         frame.setPreferredSize(new Dimension(800, 300));
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        frame.add(panel, BorderLayout.CENTER);
     }
 
     public void actionPerformed(ActionEvent e) {

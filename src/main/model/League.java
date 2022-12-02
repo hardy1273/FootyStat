@@ -14,7 +14,7 @@ public class League implements Writable {
     String lname;
     int teams;
     Team team;
-    ArrayList<Team> teamsInLeague = new ArrayList<>();
+    ArrayList<Team> teamsInLeague;
 
 
     public League(String lname) {
@@ -44,12 +44,14 @@ public class League implements Writable {
     }
 
     public void addTeamToLeague(Team team) {
+        EventLog.getInstance().logEvent(new Event("Team added to league"));
         teamsInLeague.add(team);
 
     }
 
     public List<Team> getTeamsInLeague() {
         return Collections.unmodifiableList(teamsInLeague);
+
     }
 
 
@@ -69,7 +71,13 @@ public class League implements Writable {
             jsonArray.put(t.toJson());
         }
         return jsonArray;
+
+
     }
+
+
+
+
 }
 
 

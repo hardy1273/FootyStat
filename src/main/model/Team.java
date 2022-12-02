@@ -51,6 +51,7 @@ public class Team implements Writable {
     public void addTeam(Team team) {
         teams.add(team);
 
+
     }
 
     public int getSize() {
@@ -78,6 +79,8 @@ public class Team implements Writable {
 
         return jsonArray;
     }
+
+
 }
 
 

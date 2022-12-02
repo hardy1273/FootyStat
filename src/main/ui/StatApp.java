@@ -1,7 +1,10 @@
 package ui;
 
 
+import com.oracle.tools.packager.Log;
 import javafx.scene.layout.Pane;
+import model.Event;
+import model.EventLog;
 import model.Player;
 import model.Team;
 import model.League;
@@ -38,6 +41,8 @@ public class StatApp {
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
     static final String JSON_STORE = "./data/statapp.json";
+    EventLog el;
+
 
     //EFFECTS: constructs new scanner ,player and team to be used later in program
     public StatApp() throws IOException {
@@ -113,8 +118,14 @@ public class StatApp {
     public void quit() {
 
         System.out.println("Bye!");
+        for (Event next : el) {
+            System.out.println(next.toString());
+        }
 
         System.exit(0);
+
+
+
 
     }
 
@@ -224,5 +235,6 @@ public class StatApp {
             System.out.println("Unable to read from file: " + JSON_STORE);
         }
     }
+
 
 }

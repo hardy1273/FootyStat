@@ -1,5 +1,7 @@
 package ui;
 
+import model.Event;
+import model.EventLog;
 import model.League;
 import model.Team;
 import org.json.JSONArray;
@@ -10,6 +12,8 @@ import persistence.JsonWriter;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -35,11 +39,12 @@ public class AddTeamPage {
     JButton createLeague = new JButton("Save league");
     JButton show = new JButton("Add and save team to league");
     JButton showTeam = new JButton("Show Teams added.");
-    JButton loadLeague = new JButton("Load league");
+    JButton loadLeague = new JButton("LOAD LEAGUE (if adding to previous league, else continue saving new league)");
     JSONObject json;
     JsonWriter jsonWriter = new JsonWriter(JSON_STORE);
     JsonReader jsonReader = new JsonReader(JSON_STORE);
     League league;
+    EventLog theLog;
 
 
     public AddTeamPage() {
@@ -83,7 +88,7 @@ public class AddTeamPage {
         panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 10, 20));
         panel.setLayout(new GridLayout(0, 1));
         frame.add(panel, BorderLayout.CENTER);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         frame.setTitle("FootyStat");
         show.setActionCommand("add");
         show.addActionListener(this::actionPerformed);
@@ -95,6 +100,15 @@ public class AddTeamPage {
         loadLeague.addActionListener(this::actionPerformed);
         show.setPreferredSize(new Dimension(100, 100));
 
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                for (Event next : EventLog.getInstance()) {
+                    System.out.println(next);
+                }
+            }
+        });
+
     }
 
     //EFFECTS: listens to actions , takes to next page according to button pressed
@@ -104,11 +118,12 @@ public class AddTeamPage {
             System.out.println(f2.getText());
             System.out.println(f3.getText());
 
+            String tmName = f1.getText();
             int points = Integer.parseInt(String.valueOf(f2.getText()));
             int standing = Integer.parseInt(String.valueOf(f3.getText()));
 
 
-            league.addTeamToLeague(new Team(f1.getText(), points, standing));
+            league.addTeamToLeague(new Team(tmName, points, standing));
             saveLeague();
 
 

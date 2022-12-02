@@ -21,3 +21,10 @@ User Stories:
 - You can locate my visual component on the welcome page.
 - You can save the state of my application by pressing add and save team in the create league page.
 - You can reload the state of my application by pressing load league on the create league page.
+
+# Phase 4: Task 2
+- Thu Dec 01 23:36:22 PST 2022
+- Team added to league
+- Thu Dec 01 23:36:29 PST 2022
+- Team added to league
+
