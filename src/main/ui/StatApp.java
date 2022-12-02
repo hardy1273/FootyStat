@@ -1,7 +1,7 @@
 package ui;
 
 
-import com.oracle.tools.packager.Log;
+
 import javafx.scene.layout.Pane;
 import model.Event;
 import model.EventLog;
