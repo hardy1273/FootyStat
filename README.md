@@ -28,3 +28,7 @@ User Stories:
 - Thu Dec 01 23:36:29 PST 2022
 - Team added to league
 
+# Phase 4: Task 3
+- The refactoring I would do include integrating my league and team classes better.
+- I could have added an aggregation in the team and league classes which would only let a team be in
+    one specific league at a time.
